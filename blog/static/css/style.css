@@ -1,0 +1,140 @@
+/* General Styles */
+:root {
+    --primary-color: #007bff ;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    margin-top: 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: white; /* Background color for the header */
+    padding: 20px 0; /* Padding for the header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.blogverse-title {
+    font-size: 3em; /* Big font size for BlogVerse */
+    font-weight: bold; /* Make the title bold */
+    color: var(--primary-color); /* Primary color for the title */
+    margin: 0; /* Remove default margin */
+}
+
+/* Navbar Styles */
+.navbar {
+    justify-content: center; /* Center the navbar items */
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 0.9em; /* Smaller font size for navbar links */
+    color: #333; /* Color for navbar links */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: var(--primary-color); /* Change color on hover */
+}
+
+/* Post Styles */
+.post-content {
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-content h3 {
+    color: var(--primary-color);
+}
+
+.post-content h5 {
+    color: #555;
+}
+
+/* User Styles */
+.user-profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+/* Button Styles */
+.btn-outline-info {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.btn-outline-info:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Alert Styles */
+.alert {
+    margin-top: 20px;
+}
+
+/* Additional Styles */
+.content {
+    padding-top: 80px; /* Add padding to prevent content from being hidden behind the fixed navbar */
+}
+
+footer {
+    text-align: center; /* Center footer text */
+    padding: 20px; /* Padding for footer */
+    background-color: #343a40; /* Dark footer background */
+    color: white; /* White text in footer */
+    position: relative; /* Positioning for footer */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5em; /* Smaller font for smaller screens */
+    }
+}
+
+/* Blog Post Layout */
+.post-preview {
+    display: flex;
+ flex-direction: column; /* Stack elements vertically */
+    margin-bottom: 20px; /* Space between posts */
+}
+
+.post-preview .row {
+    align-items: flex-start; /* Align items to the top */
+}
+
+.post-preview img.rounded-circle {
+    margin-right: 10px; /* Space between profile picture and text */
+}
+
+.post-preview h3 {
+    margin-top: 0; /* Remove margin on top of the title */
+}
+
+.text-black {
+    margin-top: 10px; /* Add margin to separate content from the title */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .post-preview {
+        flex-direction: column; /* Stack elements vertically on small screens */
+    }
+}

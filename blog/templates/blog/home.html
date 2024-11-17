@@ -1,0 +1,63 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">Blog Posted</h1>
+        
+        <div class="row g-3">
+            {% for post in posts %}
+                <div class="col-md-4">
+                    <div class="post-preview border-bottom mb-4 pb-4">
+                        <div class="row g-3">
+                            <div class="col-auto">
+                                <a href="{% url 'user-posts' post.author.username %}">
+                                    <img width="70" class="rounded-circle" src="{{ post.author.profile.image.url }}" alt="{{ post.author.username }}">
+                                </a>
+                            </div>
+                            <div class="col">
+                                <h3>
+                                    <a href="{% url 'post-detail' post.id %}" class="text-decoration-none text-dark">{{ post.title }}</a>
+                                </h3>
+                                {% if post.image %}
+                                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mt-2">  <!-- Responsive image -->
+                                {% endif %}
+                                <div class="text-black mt-2 mb-2">
+                                    <p>
+                                        {{ post.content|truncatewords:30 }}  <!-- Display the first 30 words of the content -->
+                                    </p>
+                                </div>
+                                <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">Read More</a>
+                            </div>
+                            <div class="col-auto">
+                                <h5 class="text-end text-primary text-opacity-90">
+                                    By <a href="{% url 'user-posts' post.author.username %}" class="text-decoration-none">{{ post.author }}</a>
+                                    <br>
+                                    <small class="text-primary text-opacity-75">on {{ post.date_posted|date:"F d, Y" }}</small>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No posts available.</p>
+            {% endfor %}
+        </div>
+
+        <!-- Add pagination -->
+        <div class="pagination mt-4">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">Previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary">Next</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+{% endblock content %}

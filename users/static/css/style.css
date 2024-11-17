@@ -1,0 +1,72 @@
+/* General Styles */
+:root {
+    --primary-color: #007bff;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+}
+
+/* Container Styles */
+.container {
+    margin-top: 30px; /* Space above the container */
+    padding: 20px; /* General padding for all containers */
+}
+
+/* Profile Page Styles */
+.profile-container {
+    background-color: white; /* Background for profile container */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.rounded-circle {
+    border: 3px solid var(--primary-color); /* Optional: Add a border to the profile picture */
+}
+
+.fs-3 {
+    margin-top: 10px; /* Space between the username and profile picture */
+}
+
+.fs-4 {
+    margin-top: 5px; /* Space between the email and username */
+}
+
+.border-right {
+    border-right: 1px solid #e0e0e0; /* Light border for visual separation */
+}
+
+.p-3 {
+    padding: 20px; /* Padding for the inner content */
+}
+
+/* Registration Page Styles */
+.registration-container {
+    background-color: white; /* Background for registration container */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.border-top {
+    border-top: 1px solid #e0e0e0; /* Light border for visual separation */
+}
+
+.btn-outline-info {
+    width: 100%; /* Make the button full width */
+}
+
+.text-muted a {
+    color: var(--primary-color); /* Change link color to primary */
+}
+
+.text-muted a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .col-md-3, .col-md-6 {
+        border-right: none; /* Remove border on smaller screens */
+        margin-bottom: 20px; /* Space between columns on smaller screens */
+    }
+
+    .btn-outline-info {
+        width: auto; /* Reset button width on smaller screens */
+    }
+}

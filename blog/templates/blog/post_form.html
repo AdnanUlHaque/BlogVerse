@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <div class="form-group">
+            <legend class="border-bottom mb-4">{% if form.instance.pk %}Edit Post{% else %}Create Post{% endif %}</legend>
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+            {% endif %}
+            {{ form|crispy }}
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-info mb-2">Save</button>
+        <a href="{% url 'blog-home' %}" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+{% endblock content %}
